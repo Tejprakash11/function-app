@@ -1,4 +1,4 @@
-name: Deploy Azure Function App with Managed Identity
+name: Deploy with sp
 
 on:
   push:
@@ -8,11 +8,11 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'test-funApp'
+  AZURE_FUNCTIONAPP_NAME: 'actions-py'
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
   PYTHON_VERSION: '3.11'
-  RESOURCE_GROUP: 'tej'
-  LOCATION: 'eastus'
+  RESOURCE_GROUP: 'cicd-poc'
+  LOCATION: 'Canada Central'
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
         popd
 
     - name: Upload function app package
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: function-app-package
         path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
