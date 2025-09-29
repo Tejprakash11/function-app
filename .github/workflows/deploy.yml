@@ -16,7 +16,7 @@ env:
 
 jobs:
   build:
-    runs-on: personal
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout GitHub Action
