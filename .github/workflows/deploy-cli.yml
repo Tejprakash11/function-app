@@ -11,7 +11,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: [self-hosted]   # Ensure this label matches your self-hosted runner
+    runs-on: ubuntu-latest  # Ensure this label matches your self-hosted runner
 
     steps:
       - name: Checkout code
